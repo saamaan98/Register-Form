@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="icon" type="Logo" href="Karyaar-Logo.png">
+    <title>Register Form</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+
+    <div class="container">
+        <div class="form">
+
+            <!-- HEADER  -->
+
+            <div class="header">
+
+                <center>
+                    <img src="c00907-1-300x106-1.png" alt="Kaaryar Logo">
+                    <h2 id="title"> فرم ثبت‌نام | Register Form</h2>
+                </center>
+
+                <div class="explaination">
+                    <h4> دوست عزیز </h4>
+                    <h3> سلام </h3>
+
+                    <p>
+                        از اینکه در مسیر رشد حرفه‌ای خود کاریار را انتخاب کرده‌اید خوشحالیم.
+                        <br />
+                        کاریار یک مدرسه کدنویسی متصل به بازار کار است. ما با ایجاد فرصت دسترسی همگانی به آموزش‌های
+                        باکیفیت در
+                        حوزه IT به مهارت آموزان کاریار کمک می‌کنیم مسیر شغلی خود را تعریف کنند و تا رسیدن به مرحله
+                        کارآموزی در کنارشان هستیم.
+                        <br />
+                        <br />
+
+                        <strong> دوره‌های آموزشی </strong>
+                        <br />
+                        1- مسیر آموزش و اشتغال امور اداری
+                        <br />
+                        2- مسیر آموزش و اشتغال طراحی وب سایت
+                        <br />
+                        3- مسیر آموزش و اشتغال برنامه نویسی
+                        <br />
+                        4- مسیر آموزش و اشتغال تحلیل داده
+
+                        <br />
+                        <br />
+
+
+                        تکمیل این فرم به معنای علاقمندی شما برای ورود به
+                        فرآیند پذیرش و شرکت در دوره های آموزشی مؤسسه کاریار با هدف اشتغال است. در صورت تکمیل این فرم
+                        جزییات دوره ها و مراحل پذیرش برای شما ارسال خواهد شد.
+                        <br />
+
+
+
+                        شما پس از تکمیل فرم ثبت نام اولیه، از طریق ایمیلی که در فرم
+                        یادداشت کرده‌اید، نهایتا طی یک هفته کاری، ایمیل رزرو ثبت نام را دریافت می کنید.
+                        <br />
+
+                        لطفا سوالات خود را از طریق ایمیل زیر با ما در میان بگذارید.
+                        <br />
+                        <br />
+
+                        <a href="admission@kaaryar.ir">admission@kaaryar.ir</a>
+
+                        <br />
+                        <br />
+                    </p>
+                    <br>
+                    <h2 id="team">
+                        تیم کاریار
+                    </h2>
+                    <br />
+
+                </div>
+
+            </div>
+
+            <hr class="rounded">
+
+
+            <!-- SECTION 1  -->
+
+
+            <div class="section1">
+
+                <h2 id="title2">بخش اول</h2>
+
+
+                <div id="section1-1">
+
+
+                    <div class="input-field">
+                        <label for="firstName">نام (لطفا به فارسی بنویسید)</label><br>
+                        <input class="validate-input" id="firstName" type="text" placeholder="جواب شما" name="firstName"
+                            required>
+                    </div>
+
+                    <div class="input-field">
+                        <label for="family">نام خانوادگی(لطفا به فارسی بنویسید)</label><br>
+                        <input class="validate-input" id="family" type="text" placeholder="جواب شما" name="family"
+                            required>
+                    </div>
+
+                    <div class="input-field">
+                        <label for="email">ایمیل خود را وارد نمایید</label><br>
+                        <input class="validate-input" id="email" type="email" placeholder="abcd@gmail.com" size="50"
+                            name="email" required>
+                        <div class="error"></div>
+                    </div>
+
+                    <div class="input-field">
+                        <label for="mobile">تلفن همراه خود را وارد نمایید</label><br>
+                        <input class="validate-input" id="mobile" type="tel" placeholder="09123456789" maxlength="11"
+                            name="mobile" required>
+                        <div class="error"></div>
+                    </div>
+
+                    <div class="input-field" style=" margin: 0%;">
+                        <label for="province">استانی که در آن زندگی می کنید</label><br>
+                        <select class="validate-dropdown" id="province" name="province" required>
+                            <option value="" disabled selected>انتخاب کنید</option>
+                            <option value="آذربایجان شرقی" label="آذربایجان شرقی">آذربايجان شرقی</option>
+                            <option value="آذربایجان غربی" label="آذربایجان غربی">آذربايجان غربی</option>
+                            <option value="اردبیل" label="اردبیل">اردبيل</option>
+                            <option value="اصفهان" label="اصفهان">اصفهان</option>
+                            <option value="البرز" label="البرز">البرز</option>
+                            <option value="ایلام" label="ایلام">ایلام</option>
+                            <option value="بوشهر" label="بوشهر">بوشهر</option>
+                            <option value="تهران" label="تهران">تهران</option>
+                            <option value="چهارمحال و بختیاری" label="چهارمحال و بختیاری">چهارمحال بختیاری</option>
+                            <option value="خراسان جنوبی" label="خراسان جنوبی">خراسان جنوبی</option>
+                            <option value="خراسان رضوی" label="خراسان رضوی">خراسان رضوی</option>
+                            <option value="خراسان شمالی" label="خراسان شمالی">خراسان شمالی</option>
+                            <option value="خوزستان" label="خوزستان">خوزستان</option>
+                            <option value="زنجان" label="زنجان">زنجان</option>
+                            <option value="سمنان" label="سمنان">سمنان</option>
+                            <option value="سیستان و بلوچستان" label="سیستان و بلوچستان">سيستان و بلوچستان</option>
+                            <option value="فارس" label="فارس">فارس</option>
+                            <option value="قزوین" label="قزوین">قزوين</option>
+                            <option value="قم" label="قم">قم</option>
+                            <option value="کردستان" label="کردستان">كردستان</option>
+                            <option value="کرمان" label="کرمان">کرمان</option>
+                            <option value="کرمانشاه" label="کرمانشاه">كرمانشاه</option>
+                            <option value="کهگیلویه و بویراحمد" label="کهگیلویه و بویراحمد">كهكيلويه و بويراحمد</option>
+                            <option value="گلستان" label="گلستان">گلستان</option>
+                            <option value="گیلان" label="گیلان">گيلان</option>
+                            <option value="لرستان" label="لرستان">لرستان</option>
+                            <option valu="مازندران" label="مازندران">مازندران</option>
+                            <option value="مرکزی" label="مرکزی">مرکزی</option>
+                            <option value="هرمزگان" label="هرمزگان">هرمزگان</option>
+                            <option value="همدان" label="همدان">همدان</option>
+                            <option value="یزد" label="یزد">يزد</option>
+                        </select>
+                    </div>
+
+                    <div class="input-field">
+                        <label for="city">شهری که در آن زندگی میکنید را بنویسید</label><br>
+                        <input class="validate-input" id="city" type="text" placeholder="جواب شما" name="city" required>
+                    </div>
+
+                    <div class="input-field" class="birthDate">
+                        <label for="birthDate">سال تولد</label><br>
+                        <select class="validate-dropdown" id="birthDate" name="birthDate" required>
+                            <option value="" disabled selected class="date" id="date">انتخاب کنید</option>
+                            <option>1385</option>
+                            <option>1384</option>
+                            <option>1383</option>
+                            <option>1382</option>
+                            <option>1381</option>
+                            <option>1380</option>
+                            <option>1379</option>
+                            <option>1378</option>
+                            <option>1377</option>
+                            <option>1376</option>
+                            <option>1375</option>
+                            <option>1374</option>
+                            <option>1373</option>
+                            <option>1372</option>
+                            <option>1371</option>
+                            <option>1370</option>
+                            <option>1369</option>
+                            <option>1368</option>
+                            <option>1367</option>
+                            <option>1366</option>
+                            <option>1365</option>
+                            <option>1364</option>
+                            <option>1363</option>
+                            <option>1362</option>
+                            <option>1361</option>
+                            <option>1360</option>
+                            <option>1359</option>
+                            <option>1358</option>
+                        </select>
+                    </div>
+
+                    <div class="input-field">
+                        <label for="education">میزان تحصیلات</label><br>
+                        <select class="validate-dropdown" id="education" name="education" required>
+                            <option value="">انتخاب کنید</option>
+                            <option>زیر دیپلم</option>
+                            <option>دانش آموز</option>
+                            <option>دیپلم</option>
+                            <option>دانشجوی کاردانی</option>
+                            <option>کاردانی</option>
+                            <option>دانشجوی کارشناسی</option>
+                            <option>کارشناسی</option>
+                            <option>دانشجوی کارشناسی ارشد</option>
+                            <option>کارشناسی ارشد</option>
+                            <option>دانشجوی دکتری</option>
+                            <option>دکتری یا بالاتر</option>
+                        </select>
+
+                        <div class="input-field" id="education-2">
+                            <div class="part1 nistam">
+                                <label for="highSchoolYear">سال چندم مقطع متوسطه دوم هستید ؟</label><br>
+                                <select id="highSchoolYear" name="highSchoolYear" required>
+                                    <option value="">انتخاب کنید</option>
+                                    <option>دهم</option>
+                                    <option>یازدهم</option>
+                                    <option>دوازدهم</option>
+                                </select>
+                            </div>
+
+                            <div class="part2 hastam">
+                                <label for="uniSemester">درحال حاضر ترم چندم هستید</label><br>
+                                <select id="uniSemester" name="uniSemester" required>
+                                    <option value="">انتخاب کنید</option>
+                                    <option>ترم اول</option>
+                                    <option>ترم دوم</option>
+                                    <option>ترم سوم</option>
+                                    <option>ترم چهارم</option>
+                                    <option>ترم پنجم</option>
+                                    <option>ترم ششم</option>
+                                    <option>ترم هفتم</option>
+                                    <option>ترم هشتم</option>
+                                    <option>ترم نهم و یا بالاتر</option>
+                                </select>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <div class="input-field">
+                        <label for="studyField">رشته تحصیلی</label><br>
+                        <input class="validate-input" id="studyField" name="studyField" type="text"
+                            placeholder="رشته تحصیلی">
+                    </div>
+
+                </div>
+
+
+            </div>
+
+            <hr class="rounded">
+
+
+            <!-- SECTION 2  -->
+
+
+            <div class="section2">
+
+                <h2 id="title2">بخش دوم</h2>
+
+                <div id="section2-1">
+
+                    <div id="familiarities">
+                        <fieldset id="familiarity" class="check-error error radio-field familiarities validate-selectfield" required>
+                            <legend>از چه طریقی با کاریار آشنا شدید؟</legend>
+                            <div class="workshops">
+                                <input id="familiarityWorkshops" class="familiarity-option" type="radio" name="familiarity" value=" شرکت در کارگاه‌های آموزشی ">
+                                <label for="familiarityWorkshops">شرکت در کارگاه‌های آموزشی</label>
+                            </div>
+                            <div class="charity">
+                                <input id="familiarityCharity" class="familiarity-option" type="radio" name="familiarity" value="موسسات نیکوکاری">
+                                <label for="familiarityCharity">موسسات نیکوکاری</label>
+                            </div>
+                            <div class="social-media">
+                                <input id="familiaritySocialMedia" class="familiarity-option" type="radio" name="familiarity" value="شبکه‌های اجتماعی">
+                                <label for="familiaritySocialMedia">شبکه‌های اجتماعی</label>
+                            </div>
+                            <div class="university">
+                                <input id="familiarityUni" class="familiarity-option" type="radio" name="familiarity" value="دانشگاه">
+                                <label for="familiarityUni">دانشگاه</label>
+                            </div>
+                            <div class="ponisha">
+                                <input id="familiarityPoonisha" class="familiarity-option" type="radio" name="familiarity" value="پونیشا">
+                                <label for="familiarityPoonisha">پونیشا</label>
+                            </div>
+                            <div class="quera">
+                                <input id="familiarityQuera" class="familiarity-option" type="radio" name="familiarity" value="کوئرا">
+                                <label for="familiarityQuera">کوئرا</label>
+                            </div>
+                            <div class="refers">
+                                <input id="familiarityReferral" class="familiarity-option" type="radio" name="familiarity" value="معرف">
+                                <label for="familiarityReferral">معرف</label>
+                            </div>
+                            <div class="other">
+                                <input id="familiarityOther" class="familiarity-option" type="radio" name="familiarity" value="other">
+                                <label for="familiarityOther">سایر</label>
+                            </div>
+
+                            <br>
+                        </fieldset>
+                        <div class="refer input-field col-12 col-md-6">
+                            <label for="refer">لطفا نام معرف یا موسسه را بنویسید</label><br>
+                            <input id="refer" class="refer" name="refer" type="text" placeholder="معرف" required>
+                        </div>
+                    </div>
+
+
+                    <div id="road-map">
+                        <fieldset id="selectedField" class="check-error error radio-field road-map validate-selectfield" required>
+                            <legend>علاقمند ورود به کدام مسیرآموزشی و اشتغال کاریارهستید؟</legend>
+                            <div class="front-end-course">
+                                <input id="frontEnd" class="selected-field-option" type="radio" name="selectedField" value="frontEnd">
+                                <label for="frontEnd">مسیر آموزش و اشتغال طراحی وب سایت</label>
+                            </div>
+                            <div class="back-end-course">
+                                <input id="backEnd" class="selected-field-option" type="radio" name="selectedField" value="backEnd">
+                                <label for="backEnd">مسیر آموزش و اشتغال برنامه‌نویسی</label>
+                            </div>
+                            <div class="data-analysis-course">
+                                <input id="dataAnalysis" class="selected-field-option" type="radio" name="selectedField" value="DB">
+                                <label for="dataAnalysis">مسیر آموزش و اشتغال تحلیل داده</label>
+                            </div>
+                            <div class="icdl-course">
+                                <input id="icdl" class="selected-field-option" type="radio" name="selectedField" value="icdl">
+                                <label for="icdl">مسیر آموزش و اشتغال اموراداری</label>
+                            </div>
+                            <div class="social-media">
+                                <input id="other" class="selected-field-option" type="radio" name="selectedField" value="other">
+                                <label for="other">سایر</label>
+                            </div>
+                        </fieldset>
+
+                        <div id="other-select1" class="input-field col-12 col-md-6">
+                            <label for="careerPathwayOther">لطفا نام مسیر موردنظرتان را بنویسید</label><br>
+                            <input name="careerPathwayOther" type="text" id="careerPathwayOther"
+                                placeholder="مسیر آموزشی " required>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+            <!-- SECTION 3  -->
+
+
+            <div class="section3">
+                <div></div>
+
+                <div class="input-field explain">
+                    <label for="description"> سایر توضیحات</label><br>
+                    <textarea id="description" name="description" rows="4" cols="50"></textarea>
+                </div>
+
+                <div></div>
+            </div>
+
+
+            <hr class="rounded">
+
+
+            <!-- BuTTON  -->
+
+            <div id="button">
+
+                <button type="button" class="btn btn-success" id="submit">ثبت فرم</button>
+                <i class="uil uil-navigator"></i>
+
+            </div>
+
+
+        </div>
+    </div>
+
+    <script src="./js/main3.js"></script>
+    <script src="./js/main.js"></script>
+</body>
+
+</html>

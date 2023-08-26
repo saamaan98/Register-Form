@@ -1,0 +1,260 @@
+@font-face{
+    font-family: font;
+    src: url("web_Yekan.ttf");
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: font;
+    direction: rtl;
+}
+
+body{
+    min-height: 1500px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #0B0B45;
+    text-align: right;
+}
+
+
+.container{
+    position: relative;
+    max-width: 1200px;
+    width: 100%;
+    border-radius: 6px;
+    background-color: #fff;
+    box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+    height: 2050px;
+    /* max-height: 1850px; */
+}
+
+#title2 {
+    color: #0B0B45;
+    text-align: center;
+    font-weight: bolder;
+    padding: 20px;
+}
+
+hr.rounded {
+    border-top: 8px solid #008E46;
+    border-radius: 5px;
+}
+
+/* HEADER  */
+
+img {
+    text-align: center !important;
+}
+
+p, legend {
+    font-size: 15px;
+}
+
+#team {
+    color: #008E46;
+    font-weight:500;
+}
+
+#title {
+    color: #008E46;
+    padding-top: 10px;
+}
+
+/* SECTION 1  */
+
+
+#section1-1 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 10px;
+}
+
+.input-field {
+    padding: 10px;
+}
+
+.input-field label {
+    font-size: 12px;
+}
+
+.input-field input {
+    width: 300px;
+    height: 40px;
+    border-radius: 5px;
+    border: 1px solid #aaa;
+    padding: 0 5px;
+}
+
+select{
+    width: 300px;
+    height: 40px;
+    border-radius: 5px;
+    border: 1px solid #aaa;
+    padding: 0 5px;
+
+}
+.part1 , .part2{
+    display: none;
+}
+
+#section1-2 {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 10px;
+}
+.inputfield label {
+    padding-right: 10px;
+}
+
+.error{
+    color: red;
+    font-size: 12px;
+}
+
+
+
+/* SECTION 2  */
+
+#section2-1 {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 10px;
+    padding-right: 50px;
+}
+
+#other-select1 , .refer{
+    display: none;
+}
+
+.familiarities, .road-map {
+    color: black;
+    font-size: 15px;
+}
+
+
+
+/* SECTION 3  */
+
+.section3 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 10px;
+}
+
+.explain #description {
+    width: 400px;
+    height: 100px;
+}
+
+/* .col-md-12 {
+    display: flex;
+    flex-direction:row-reverse; 
+    justify-content:center; 
+    gap:10px; 
+    width: 80%;
+} */
+
+/* BUTTON  */
+#button {
+    text-align: center !important;
+    padding-top: 50px;
+}
+
+#button #submit {
+    width: 130px;
+    height: 50px;
+}
+
+/* RESPONSIVE  */
+
+@media (max-width: 1200px) {
+    .container{
+        height: auto;
+        max-height: auto;
+        padding: 10px;
+        
+    }
+}
+
+@media (min-width: 751px) and (max-width:1000px){
+    #section1-1 {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-gap: 10px;
+    }
+    #section1-2 {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-gap: 10px;
+    }
+    #section2-1 {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        grid-gap: 10px;
+        padding-right: 50px;
+    }
+}
+
+@media (max-width: 750px) {
+    .container form{
+        overflow-y: scroll;
+    }
+    .container form::-webkit-scrollbar{
+       display: none;
+    }
+    form .fields .input-field{
+        width: calc(100% / 2 - 15px);
+    }
+    #section1-1 {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        grid-gap: 10px;
+    }
+    #section1-2 {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        grid-gap: 10px;
+    }
+    #section2-1 {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        grid-gap: 10px;
+        padding-right: 50px;
+    }
+}
+
+@media (max-width: 550px) {
+    form .fields .input-field{
+        width: 100%;
+    }
+    #section1-1 {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        grid-gap: 10px;
+    }
+    #section1-2 {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        grid-gap: 10px;
+    }
+    #section2-1 {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        grid-gap: 10px;
+        padding-right: 50px;
+    }
+}
+
+@media (min-width: 320px) and (max-width: 430px) {
+    .explain #description {
+        width: 270px !important;
+        height: 100px !important;
+    }
+    body {
+        overflow-x: hidden !important;
+    }
+}
+
