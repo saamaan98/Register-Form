@@ -55,6 +55,10 @@ let familiarityValue = null;
 let selectedFieldValue = null;
 const familiarityOtherField = document.querySelector("#refer");
 const careerPathwayOtherField = document.querySelector("#careerPathwayOther");
+const careerPathWayOptions = document.getElementById('careerPathWayOptions')
+const careerPathwayList = (async () => await careerPathwayItems([]))();
+
+console.log(careerPathwayItems);
 
 function showInput(field) {
   field.setAttribute("required", true);
@@ -170,7 +174,7 @@ submit_btn.addEventListener('click', () => {
 
   // Calculate total empty fields
   const totalEmptyFields = emptyInputCount + emptyDropdownCount + emptySelectfieldCount;
-
+  
 
   if (totalEmptyFields > 0) {
     alert('لطفا تمام بخش های فرم را تکمیل نمایید ');
@@ -224,14 +228,14 @@ submit_btn.addEventListener('click', () => {
 
     console.log(raw);
 
-    fetch("YOUR API", requestOptions)
+    fetch("https://kaaryar.hossein.codes/reg/wp/new", requestOptions)
       .then(response => {
         if (response.status === 409) {
           throw new Error(".فرم شما ثبت نشد. لطفا از اینکه ایمیل و تلفن وارد شده تکراری نیست مطمئن شوید");
         } else if (response.ok) {
           // Successful response handling
           alert('فرم شما با موفقیت ثبت شد');
-          window.location.href = "YOUR LINK";
+          window.location.href = "https://kaaryar.ir/";
 
         } else {
           // Other response handling
@@ -290,4 +294,26 @@ const provinceOptions = [
   { value: "یزد", label: "یزد" },
 ];
 
+// API for CareerPathWay
+
+console.log(1);
+async function careerPathwayItems() {
+  try {
+    // const response = await fetch('https://kaaryar.hossein.codes/reg/wp/careerpathways/values/all?activesOnly=true&orderAscending=true' ,  {method : "GET"}
+    
+    const response = await fetch('https://kaaryar.hossein.codes/reg/wp/careerpathways/values/all', {
+      method: 'GET',
+      headers: {
+        accept: 'application/json',
+      },
+    });
+    // );
+      console.log(response);
+
+    const items = await response.json();
+      return items;
+  } catch (error) {
+    console.log(error);
+  }
+}
 
