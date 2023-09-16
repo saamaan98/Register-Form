@@ -60,12 +60,14 @@ populateCareerPathways('careerPathWayOptions');
 
 
 function showInput(field) {
+  field.parentElement.style.display = "block";
   field.setAttribute("required", true);
   field.classList.add("validate-input");
   field.style.display = "block";
 
 }
 function hideInput(field) {
+  field.parentElement.style.display = "none";
   field.setAttribute("required", false);
   field.classList.remove("validate-input");
   field.value = "";
@@ -330,9 +332,11 @@ async function populateCareerPathways(divId){
 
   selectedFieldOptions.forEach(option => {
     option.addEventListener('click', () => {
-      selectedFieldValue = option.value;
+      selectedFieldValue = option.getAttribute("selectedstr");
       if (selectedFieldValue == "other") {
         showInput(careerPathwayOtherField);
+      console.log(selectedFieldValue);
+
       } else if (careerPathwayOtherField?.style.display == "block") {
         hideInput(careerPathwayOtherField);
       }
