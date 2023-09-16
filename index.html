@@ -251,38 +251,47 @@
                 <div id="section2-1">
 
                     <div id="familiarities">
-                        <fieldset id="familiarity" class="check-error error radio-field familiarities validate-selectfield" required>
+                        <fieldset id="familiarity"
+                            class="check-error error radio-field familiarities validate-selectfield" required>
                             <legend>از چه طریقی با کاریار آشنا شدید؟</legend>
                             <div class="workshops">
-                                <input id="familiarityWorkshops" class="familiarity-option" type="radio" name="familiarity" value=" شرکت در کارگاه‌های آموزشی ">
+                                <input id="familiarityWorkshops" class="familiarity-option" type="radio"
+                                    name="familiarity" value=" شرکت در کارگاه‌های آموزشی ">
                                 <label for="familiarityWorkshops">شرکت در کارگاه‌های آموزشی</label>
                             </div>
                             <div class="charity">
-                                <input id="familiarityCharity" class="familiarity-option" type="radio" name="familiarity" value="موسسات نیکوکاری">
+                                <input id="familiarityCharity" class="familiarity-option" type="radio"
+                                    name="familiarity" value="موسسات نیکوکاری">
                                 <label for="familiarityCharity">موسسات نیکوکاری</label>
                             </div>
                             <div class="social-media">
-                                <input id="familiaritySocialMedia" class="familiarity-option" type="radio" name="familiarity" value="شبکه‌های اجتماعی">
+                                <input id="familiaritySocialMedia" class="familiarity-option" type="radio"
+                                    name="familiarity" value="شبکه‌های اجتماعی">
                                 <label for="familiaritySocialMedia">شبکه‌های اجتماعی</label>
                             </div>
                             <div class="university">
-                                <input id="familiarityUni" class="familiarity-option" type="radio" name="familiarity" value="دانشگاه">
+                                <input id="familiarityUni" class="familiarity-option" type="radio" name="familiarity"
+                                    value="دانشگاه">
                                 <label for="familiarityUni">دانشگاه</label>
                             </div>
                             <div class="ponisha">
-                                <input id="familiarityPoonisha" class="familiarity-option" type="radio" name="familiarity" value="پونیشا">
+                                <input id="familiarityPoonisha" class="familiarity-option" type="radio"
+                                    name="familiarity" value="پونیشا">
                                 <label for="familiarityPoonisha">پونیشا</label>
                             </div>
                             <div class="quera">
-                                <input id="familiarityQuera" class="familiarity-option" type="radio" name="familiarity" value="کوئرا">
+                                <input id="familiarityQuera" class="familiarity-option" type="radio" name="familiarity"
+                                    value="کوئرا">
                                 <label for="familiarityQuera">کوئرا</label>
                             </div>
                             <div class="refers">
-                                <input id="familiarityReferral" class="familiarity-option" type="radio" name="familiarity" value="معرف">
+                                <input id="familiarityReferral" class="familiarity-option" type="radio"
+                                    name="familiarity" value="معرف">
                                 <label for="familiarityReferral">معرف</label>
                             </div>
                             <div class="other">
-                                <input id="familiarityOther" class="familiarity-option" type="radio" name="familiarity" value="other">
+                                <input id="familiarityOther" class="familiarity-option" type="radio" name="familiarity"
+                                    value="other">
                                 <label for="familiarityOther">سایر</label>
                             </div>
 
@@ -296,28 +305,39 @@
 
 
                     <div id="road-map">
-                        <fieldset id="selectedField" class="check-error error radio-field road-map validate-selectfield" required>
+                        <fieldset id="selectedField" class="check-error error radio-field road-map validate-selectfield"
+                            required>
                             <legend>علاقمند ورود به کدام مسیرآموزشی و اشتغال کاریارهستید؟</legend>
-                            <div class="front-end-course">
-                                <input id="frontEnd" class="selected-field-option" type="radio" name="selectedField" value="frontEnd">
-                                <label for="frontEnd">مسیر آموزش و اشتغال طراحی وب سایت</label>
+                            <div id="careerPathWayOptions">
+                                <div class="front-end-course">
+                                    <input id="frontEnd" class="selected-field-option" type="radio" name="selectedField"
+                                        value="frontEnd">
+                                    <label for="frontEnd">مسیر آموزش و اشتغال طراحی وب سایت</label>
+                                </div>
+                                <div class="back-end-course">
+                                    <input id="backEnd" class="selected-field-option" type="radio" name="selectedField"
+                                        value="backEnd">
+                                    <label for="backEnd">مسیر آموزش و اشتغال برنامه‌نویسی</label>
+                                </div>
+                                <div class="data-analysis-course">
+                                    <input id="dataAnalysis" class="selected-field-option" type="radio"
+                                        name="selectedField" value="DB">
+                                    <label for="dataAnalysis">مسیر آموزش و اشتغال تحلیل داده</label>
+                                </div>
+                                <div class="icdl-course">
+                                    <input id="icdl" class="selected-field-option" type="radio" name="selectedField"
+                                        value="icdl">
+                                    <label for="icdl">مسیر آموزش و اشتغال اموراداری</label>
+                                </div>
                             </div>
-                            <div class="back-end-course">
-                                <input id="backEnd" class="selected-field-option" type="radio" name="selectedField" value="backEnd">
-                                <label for="backEnd">مسیر آموزش و اشتغال برنامه‌نویسی</label>
-                            </div>
-                            <div class="data-analysis-course">
-                                <input id="dataAnalysis" class="selected-field-option" type="radio" name="selectedField" value="DB">
-                                <label for="dataAnalysis">مسیر آموزش و اشتغال تحلیل داده</label>
-                            </div>
-                            <div class="icdl-course">
-                                <input id="icdl" class="selected-field-option" type="radio" name="selectedField" value="icdl">
-                                <label for="icdl">مسیر آموزش و اشتغال اموراداری</label>
-                            </div>
-                            <div class="social-media">
-                                <input id="other" class="selected-field-option" type="radio" name="selectedField" value="other">
-                                <label for="other">سایر</label>
-                            </div>
+                                <div class="social-media">
+                                    <input id="other" class="selected-field-option" type="radio" name="selectedField"
+                                        value="other">
+                                    <label for="other">سایر</label>
+                                </div>
+
+                            
+
                         </fieldset>
 
                         <div id="other-select1" class="input-field col-12 col-md-6">

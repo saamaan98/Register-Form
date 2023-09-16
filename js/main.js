@@ -55,10 +55,8 @@ let familiarityValue = null;
 let selectedFieldValue = null;
 const familiarityOtherField = document.querySelector("#refer");
 const careerPathwayOtherField = document.querySelector("#careerPathwayOther");
-const careerPathWayOptions = document.getElementById('careerPathWayOptions')
-const careerPathwayList = (async () => await careerPathwayItems([]))();
+populateCareerPathways('careerPathWayOptions');
 
-console.log(careerPathwayItems);
 
 function showInput(field) {
   field.setAttribute("required", true);
@@ -299,7 +297,6 @@ const provinceOptions = [
 console.log(1);
 async function careerPathwayItems() {
   try {
-    // const response = await fetch('https://kaaryar.hossein.codes/reg/wp/careerpathways/values/all?activesOnly=true&orderAscending=true' ,  {method : "GET"}
     
     const response = await fetch('https://kaaryar.hossein.codes/reg/wp/careerpathways/values/all', {
       method: 'GET',
@@ -307,13 +304,27 @@ async function careerPathwayItems() {
         accept: 'application/json',
       },
     });
-    // );
-      console.log(response);
 
     const items = await response.json();
       return items;
   } catch (error) {
-    console.log(error);
   }
 }
 
+async function populateCareerPathways(divId){
+  const careerPathwayList = await careerPathwayItems();
+  const careerPathWayOptions = document.getElementById(divId);
+  careerPathWayOptions.innerHTML="";
+  careerPathwayList.forEach(item => {
+    const option = document.createElement('div');
+    option.innerHTML= `
+    <div class="front-end-course">
+      <input id="pathway${item.id}" class="selected-field-option" type="radio" name="selectedField"
+        value=${item.value}>
+        <label for="pathway${item.id}">${item.name}</label>
+    </div>
+    `;
+    careerPathWayOptions.appendChild(option);
+  });
+
+}
