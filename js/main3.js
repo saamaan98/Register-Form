@@ -84,26 +84,7 @@ mobile_field.addEventListener('keyup',()=>{
       part_1.style.display = "none";
       part_2.style.display = "none";}
   });
-  // ---------------------------------------------------------------------------------------
-  road_map_field.addEventListener("click",(select)=>{
-    if(select.target.value == "other" && select.target.checked == true){
-      document.querySelector('#other-select1').style.display = "block";
-    }else{
-      document.querySelector('#other-select1').style.display = "none";
-      
-    }
-  });
-// ------------------------------------------------------------------------------------------
 
-
-reagent_field.addEventListener("change",(select)=>{
-  if(select.target.value == "other" && select.target.checked == true){
-    document.querySelector('.refer').style.display = "block";
-  }else{
-    document.querySelector('.refer').style.display = "none";
-
-  }
-}); 
 
 ///
 
