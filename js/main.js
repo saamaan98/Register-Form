@@ -50,11 +50,12 @@ let familiarity = document.querySelector("#familiarity");
 let selectedField = document.querySelector("#selectedField");
 
 const familiarityOptions = document.querySelectorAll('.familiarity-option');
-const selectedFieldOptions = document.querySelectorAll('.selected-field-option');
+// console.log(selectedFieldOptions)
 let familiarityValue = null;
 let selectedFieldValue = null;
 const familiarityOtherField = document.querySelector("#refer");
 const careerPathwayOtherField = document.querySelector("#careerPathwayOther");
+let selectedFieldOptions;
 populateCareerPathways('careerPathWayOptions');
 
 
@@ -86,18 +87,6 @@ familiarityOptions.forEach(option => {
 });
 
 
-selectedFieldOptions.forEach(option => {
-  option.addEventListener('click', () => {
-    selectedFieldValue = option.value;
-    if (selectedFieldValue == "other") {
-      showInput(careerPathwayOtherField);
-    } else if (careerPathwayOtherField?.style.display == "block") {
-      hideInput(careerPathwayOtherField);
-    }
-    hideBorder(selectedField);
-  });
-
-});
 
 const educationField = document.querySelector("#education");
 const familiarityField = document.querySelector("#familiarity");
@@ -205,12 +194,23 @@ submit_btn.addEventListener('click', () => {
       selectedField: (() => {
         for (const option of selectedFieldOptions) {
           if (option.checked) {
+            console.log(option);
+            console.log(option.getAttribute("selectedstr"));
+
+            return option.getAttribute("selectedstr");
+          }
+        }
+      })(),
+
+      refer: document.getElementById("refer").value,
+      careerPathwayOther: document.getElementById("careerPathwayOther").value,
+      careerPathwayId: (() => {
+        for (const option of selectedFieldOptions) {
+          if (option.checked) {
             return option.value;
           }
         }
       })(),
-      refer: document.getElementById("refer").value,
-      careerPathwayOther: document.getElementById("careerPathwayOther").value,
       description: document.getElementById("description").value,
       uniSemester: document.getElementById("uniSemester").value,
       course: "07",
@@ -223,7 +223,7 @@ submit_btn.addEventListener('click', () => {
       body: raw,
       redirect: 'follow'
     };
-
+    // console.log(selectedFieldOptions)
     console.log(raw);
 
     fetch("https://kaaryar.hossein.codes/reg/wp/new", requestOptions)
@@ -233,7 +233,7 @@ submit_btn.addEventListener('click', () => {
         } else if (response.ok) {
           // Successful response handling
           alert('فرم شما با موفقیت ثبت شد');
-          window.location.href = "https://kaaryar.ir/";
+          // window.location.href = "https://kaaryar.ir/";
 
         } else {
           // Other response handling
@@ -294,7 +294,6 @@ const provinceOptions = [
 
 // API for CareerPathWay
 
-console.log(1);
 async function careerPathwayItems() {
   try {
     
@@ -320,11 +319,27 @@ async function populateCareerPathways(divId){
     option.innerHTML= `
     <div class="front-end-course">
       <input id="pathway${item.id}" class="selected-field-option" type="radio" name="selectedField"
-        value=${item.value}>
+        value=${item.id} selectedstr="${item.name}">
         <label for="pathway${item.id}">${item.name}</label>
     </div>
     `;
     careerPathWayOptions.appendChild(option);
+
   });
+  selectedFieldOptions = document.querySelectorAll('.selected-field-option');
+
+  selectedFieldOptions.forEach(option => {
+    option.addEventListener('click', () => {
+      selectedFieldValue = option.value;
+      if (selectedFieldValue == "other") {
+        showInput(careerPathwayOtherField);
+      } else if (careerPathwayOtherField?.style.display == "block") {
+        hideInput(careerPathwayOtherField);
+      }
+      hideBorder(selectedField);
+    });
+
+  });    
+  console.log(selectedFieldOptions);
 
 }
