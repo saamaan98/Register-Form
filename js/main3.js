@@ -59,105 +59,45 @@ mobile_field.addEventListener('keyup',()=>{
 });
 
 
-  // ------------------------------------------------------------------------------
-  // #education field 
-  education_field.addEventListener('click' , (select) =>{
-    let part_1 = document.querySelector('.part1');
-    let part_2 = document.querySelector('.part2');
+//   // ------------------------------------------------------------------------------
+//   // #education field 
+//   education_field.addEventListener('click' , (select) =>{
+//     let part_1 = document.querySelector('.part1');
+//     let part_2 = document.querySelector('.part2');
 
-// console.log(part_1);
-    if (select.target.value == "دانش آموز")
-      {
-        part_1.style.display = "block";
-        part_2.style.display = "none";
+// // console.log(part_1);
+//     if (select.target.value == "دانش آموز")
+//       {
+//         part_1.style.display = "block";
+//         part_2.style.display = "none";
 
-      }
-    else if(select.target.value == "دانشجوی کاردانی" || 
-        select.target.value == "دانشجوی کارشناسی" ||
-        select.target.value == "دانشجوی کارشناسی ارشد" ||
-        select.target.value == "دانشجوی دکتری")
-         {
-          part_2.style.display = "block";
-          part_1.style.display = "none";
-        }
-    else {
-      part_1.style.display = "none";
-      part_2.style.display = "none";}
-  });
-  // ---------------------------------------------------------------------------------------
-  road_map_field.addEventListener("click",(select)=>{
-    if(select.target.value == "other" && select.target.checked == true){
-      document.querySelector('#other-select1').style.display = "block";
-    }else{
-      document.querySelector('#other-select1').style.display = "none";
-      
-    }
-  });
-// ------------------------------------------------------------------------------------------
+//       }
+//     else if(select.target.value == "دانشجوی کاردانی" || 
+//         select.target.value == "دانشجوی کارشناسی" ||
+//         select.target.value == "دانشجوی کارشناسی ارشد" ||
+//         select.target.value == "دانشجوی دکتری")
+//          {
+//           part_2.style.display = "block";
+//           part_1.style.display = "none";
+//         }
+//     else {
+//       part_1.style.display = "none";
+//       part_2.style.display = "none";}
+//   });
 
-
-reagent_field.addEventListener("change",(select)=>{
-  if(select.target.value == "other" && select.target.checked == true){
-    document.querySelector('.refer').style.display = "block";
-  }else{
-    document.querySelector('.refer').style.display = "none";
-
-  }
-}); 
 
 ///
 
-function showHastam(){
-  var hasDocumentElements = document.querySelectorAll('.nistam');
-  for(let elem of hasDocumentElements){
-      first_part.required = true;
-      first_part.required = true;
-      employmentTimeCommitment.required = true;
-      employmentType.required = true;
-  }
-}
+// function showHastam(){
+//   var hasDocumentElements = document.querySelectorAll('.nistam');
+//   for(let elem of hasDocumentElements){
+//       first_part.required = true;
+//       first_part.required = true;
+//       employmentTimeCommitment.required = true;
+//       employmentType.required = true;
+//   }
+// }
 
-// ----------------------------- set action for submit button-----------------------
-  // submit_btn.addEventListener('click', () =>{
-  //   let empty_field = "";
-  //   let i = 0;
-
-  //   // search in all inputs in the page for the empty field and color it red
-  //   all_input.forEach(input => {
-  //     if(!input.value){
-  //       i++ 
-  //       empty_field = i;
-  //       input.style.border = '1.5px solid red';
-  //     }
-  //     else{
-  //       input.style.border = '1px solid grey';
-  //     }
-
-  //   });
-
-    // search in all dropdown lists in the page for empty fields and color it red
-  //   drop_down.forEach(select => {
-  //     if(select.value == "انتخاب کنید"){
-  //       i++ 
-  //       empty_field = i;
-  //       select.style.border = '1.5px solid red';
-  //     }else{
-  //       select.style.border = '1px solid grey';
-  //     };
-  //   });
-
-  //   // if we have an empty field in the page you will get an alert
-  //   //  1 is the max number of input fields in the page
-  //   let adjust = 16 - empty_field;
-  //   if(adjust < 10){
-  //     alert('لطفا تمام بخش های فرم را تکمیل نمایید ');
-  //   }else{
-  //     alert('فرم شما با موفقیت ثبت شد');
-  //     window.location.href="https://kaaryar.ir/";
-
-  //   }
-
-  // });
 
 
 

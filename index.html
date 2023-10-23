@@ -77,20 +77,18 @@
 
                     <div class="input-field">
                         <label for="firstName">نام (لطفا به فارسی بنویسید)</label><br>
-                        <input class="validate-input" id="firstName" type="text" placeholder="جواب شما" name="firstName"
-                            required>
+                        <input class="validate-input" id="firstName" type="text" name="firstName" required>
                     </div>
 
                     <div class="input-field">
                         <label for="family">نام خانوادگی(لطفا به فارسی بنویسید)</label><br>
-                        <input class="validate-input" id="family" type="text" placeholder="جواب شما" name="family"
-                            required>
+                        <input class="validate-input" id="family" type="text" name="family" required>
                     </div>
 
                     <div class="input-field">
                         <label for="email">ایمیل خود را وارد نمایید</label><br>
-                        <input class="validate-input" id="email" type="email" placeholder="abcd@gmail.com" size="50"
-                            name="email" required>
+                        <input class="validate-input" id="email" type="email" placeholder="example@example.com"
+                            size="50" name="email" required>
                         <div class="error"></div>
                     </div>
 
@@ -197,9 +195,9 @@
                         </select>
 
                         <div class="input-field" id="education-2">
-                            <div class="part1 nistam">
+                            <div class="highSchoolYear" style="display: none;">
                                 <label for="highSchoolYear">سال چندم مقطع متوسطه دوم هستید ؟</label><br>
-                                <select id="highSchoolYear" name="highSchoolYear" required>
+                                <select class="highSchoolYear" id="highSchoolYear" name="highSchoolYear" required>
                                     <option value="">انتخاب کنید</option>
                                     <option>دهم</option>
                                     <option>یازدهم</option>
@@ -207,9 +205,9 @@
                                 </select>
                             </div>
 
-                            <div class="part2 hastam">
+                            <div class="uniSemester" style="display: none;">
                                 <label for="uniSemester">درحال حاضر ترم چندم هستید</label><br>
-                                <select id="uniSemester" name="uniSemester" required>
+                                <select class="uniSemester" id="uniSemester" name="uniSemester" required>
                                     <option value="">انتخاب کنید</option>
                                     <option>ترم اول</option>
                                     <option>ترم دوم</option>
@@ -229,8 +227,7 @@
 
                     <div class="input-field">
                         <label for="studyField">رشته تحصیلی</label><br>
-                        <input class="validate-input" id="studyField" name="studyField" type="text"
-                            placeholder="رشته تحصیلی">
+                        <input class="validate-input" id="studyField" name="studyField" type="text">
                     </div>
 
                 </div>
@@ -301,6 +298,15 @@
                             <label for="refer">لطفا نام معرف یا موسسه را بنویسید</label><br>
                             <input id="refer" class="refer" name="refer" type="text" placeholder="معرف" required>
                         </div>
+                        <div class="charitySelectionInput" style="display: none;">
+                            <label  for="charityName">نام مؤسسه‌ی نیکوکاری معرف را انتخاب
+                                کنید</label><br>
+                            <select id="charityName" name="charityName" class="charitySelectionInput"
+                                 required>
+                                <option value="">انتخاب کنید</option>
+                            </select>
+
+                        </div>
                     </div>
 
 
@@ -330,20 +336,17 @@
                                     <label for="icdl">مسیر آموزش و اشتغال اموراداری</label>
                                 </div>
                             </div>
-                                <div class="social-media">
-                                    <input id="other" class="selected-field-option" type="radio" name="selectedField"
-                                        value="other">
-                                    <label for="other">سایر</label>
-                                </div>
-
-                            
+                            <div class="social-media">
+                                <input id="other" class="selected-field-option" type="radio" name="selectedField"
+                                    selectedstr="other" value=0>
+                                <label for="other">سایر</label>
+                            </div>
 
                         </fieldset>
-
-                        <div id="other-select1" class="input-field col-12 col-md-6">
+                        <div class="careerPathwayOther input-field col-12 col-md-6">
                             <label for="careerPathwayOther">لطفا نام مسیر موردنظرتان را بنویسید</label><br>
-                            <input name="careerPathwayOther" type="text" id="careerPathwayOther"
-                                placeholder="مسیر آموزشی " required>
+                            <input id="careerPathwayOther" class="careerPathwayOther" name="careerPathwayOther"
+                                type="text" placeholder="مسیر آموزشی " required>
                         </div>
                     </div>
                 </div>

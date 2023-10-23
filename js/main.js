@@ -50,21 +50,40 @@ let familiarity = document.querySelector("#familiarity");
 let selectedField = document.querySelector("#selectedField");
 
 const familiarityOptions = document.querySelectorAll('.familiarity-option');
-const selectedFieldOptions = document.querySelectorAll('.selected-field-option');
 let familiarityValue = null;
 let selectedFieldValue = null;
+let selectedCharityName = null;
 const familiarityOtherField = document.querySelector("#refer");
 const careerPathwayOtherField = document.querySelector("#careerPathwayOther");
+const charitySelectionDiv = document.querySelector('#charityName');
+let selectedFamiliarity;
+let selectedFieldOptions;
 populateCareerPathways('careerPathWayOptions');
+populateCharityNameOptions('charityName');
 
+function showDropDown(field) {
+  field.parentElement.style.display = "block";
+  field.style.display = "block";
+  field.setAttribute("required", true);
+  field.classList.add("validate-dropdown");
+}
+function hideDropDown(field) {
+  field.parentElement.style.display = "none";
+  field.style.display = "none";
+  field.setAttribute("required", false);
+  field.classList.remove("validate-dropdown");
+  field.value = null;
+}
 
 function showInput(field) {
+  field.parentElement.style.display = "block";
   field.setAttribute("required", true);
   field.classList.add("validate-input");
   field.style.display = "block";
 
 }
 function hideInput(field) {
+  field.parentElement.style.display = "none";
   field.setAttribute("required", false);
   field.classList.remove("validate-input");
   field.value = "";
@@ -74,11 +93,19 @@ function hideInput(field) {
 familiarityOptions.forEach(option => {
   option.addEventListener('click', () => {
     familiarityValue = option.value;
-    if (familiarityValue == "other") {
+    if (familiarityValue === "موسسات نیکوکاری") {
+      
+      showDropDown(charitySelectionDiv);
+      hideInput(familiarityOtherField);
+
+    } else if (familiarityValue === "other" || familiarityValue === "معرف") {
       showInput(familiarityOtherField);
-    } else if (familiarityOtherField?.style.display == "block") {
+      hideDropDown(charitySelectionDiv);
+    } else{
+      hideDropDown(charitySelectionDiv);
       hideInput(familiarityOtherField);
     }
+
     hideBorder(familiarity);
   });
 
@@ -86,18 +113,6 @@ familiarityOptions.forEach(option => {
 });
 
 
-selectedFieldOptions.forEach(option => {
-  option.addEventListener('click', () => {
-    selectedFieldValue = option.value;
-    if (selectedFieldValue == "other") {
-      showInput(careerPathwayOtherField);
-    } else if (careerPathwayOtherField?.style.display == "block") {
-      hideInput(careerPathwayOtherField);
-    }
-    hideBorder(selectedField);
-  });
-
-});
 
 const educationField = document.querySelector("#education");
 const familiarityField = document.querySelector("#familiarity");
@@ -107,19 +122,6 @@ educationField.addEventListener("change", (select) => {
   let educationValue = select.target.value;
   const uniSemesterField = document.querySelector("#uniSemester");
   const highSchoolYearField = document.querySelector("#highSchoolYear");
-
-  function showDropDown(field) {
-    field.style.display = "block";
-    field.setAttribute("required", true);
-    field.classList.add("validate-dropdown");
-  }
-  function hideDropDown(field) {
-    field.style.display = "none";
-    field.setAttribute("required", false);
-    field.classList.remove("validate-dropdown");
-    field.value = null;
-  }
-
 
   if (educationValue.startsWith("دانشجو")) {
     showDropDown(uniSemesterField);
@@ -172,7 +174,7 @@ submit_btn.addEventListener('click', () => {
 
   // Calculate total empty fields
   const totalEmptyFields = emptyInputCount + emptyDropdownCount + emptySelectfieldCount;
-  
+
 
   if (totalEmptyFields > 0) {
     alert('لطفا تمام بخش های فرم را تکمیل نمایید ');
@@ -193,24 +195,43 @@ submit_btn.addEventListener('click', () => {
       education: document.getElementById("education").value,
       highSchoolYear: document.getElementById("highSchoolYear").value,
       studyField: document.getElementById("studyField").value,
-     
+
 
       familiarity: (() => {
         for (const option of familiarityOptions) {
           if (option.checked) {
-            return option.value;
+            selectedFamiliarity = option.value;
+            return selectedFamiliarity;
           }
         }
       })(),
+
       selectedField: (() => {
+        for (const option of selectedFieldOptions) {
+          if (option.checked) {
+            return option.getAttribute("selectedstr");
+          }
+        }
+      })(),
+
+      refer: (
+        ()=>{ 
+          if (selectedFamiliarity==='other'){
+            return document.getElementById("refer").value;
+          } else if (selectedFamiliarity==="موسسات نیکوکاری"){
+            return selectedCharityName;
+          }
+
+        }
+      )(),
+      careerPathwayOther: document.getElementById("careerPathwayOther").value,
+      careerPathwayId: (() => {
         for (const option of selectedFieldOptions) {
           if (option.checked) {
             return option.value;
           }
         }
       })(),
-      refer: document.getElementById("refer").value,
-      careerPathwayOther: document.getElementById("careerPathwayOther").value,
       description: document.getElementById("description").value,
       uniSemester: document.getElementById("uniSemester").value,
       course: "07",
@@ -223,7 +244,6 @@ submit_btn.addEventListener('click', () => {
       body: raw,
       redirect: 'follow'
     };
-
     console.log(raw);
 
     fetch("https://kaaryar.hossein.codes/reg/wp/new", requestOptions)
@@ -294,10 +314,9 @@ const provinceOptions = [
 
 // API for CareerPathWay
 
-console.log(1);
 async function careerPathwayItems() {
   try {
-    
+
     const response = await fetch('https://kaaryar.hossein.codes/reg/wp/careerpathways/values/all', {
       method: 'GET',
       headers: {
@@ -306,25 +325,79 @@ async function careerPathwayItems() {
     });
 
     const items = await response.json();
-      return items;
+    return items;
   } catch (error) {
   }
 }
 
-async function populateCareerPathways(divId){
+async function charityNameOptions() {
+  try {
+    const response = await fetch('https://kaaryar.hossein.codes/reg/wp/charity-orgs/values/all', {
+      method: 'GET',
+      headers: {
+        accept: 'application/json',
+      },
+    });
+
+    const items = await response.json();
+    return items;
+
+  } catch (error) {
+    console.log(error);
+  }
+}
+
+async function populateCharityNameOptions(selectId) {
+  const charityNameOptionClassName = 'charity-name-option';
+  const charityNameList = await charityNameOptions();
+  const charitySelectTag = document.getElementById(selectId);
+  charityNameList.forEach(
+    item => {
+      const option = document.createElement('option');
+      option.innerText = `${item.value}`;
+      option.classList.add(charityNameOptionClassName);
+      charitySelectTag.appendChild(option);
+    }
+  );
+
+  charitySelectTag.addEventListener('change',
+  ()=>{
+    selectedCharityName = charitySelectTag.value;
+  }
+  );
+
+}
+
+async function populateCareerPathways(divId) {
   const careerPathwayList = await careerPathwayItems();
   const careerPathWayOptions = document.getElementById(divId);
-  careerPathWayOptions.innerHTML="";
+  careerPathWayOptions.innerHTML = "";
   careerPathwayList.forEach(item => {
     const option = document.createElement('div');
-    option.innerHTML= `
+    option.innerHTML = `
     <div class="front-end-course">
       <input id="pathway${item.id}" class="selected-field-option" type="radio" name="selectedField"
-        value=${item.value}>
+        value=${item.id} selectedstr="${item.name}">
         <label for="pathway${item.id}">${item.name}</label>
     </div>
     `;
     careerPathWayOptions.appendChild(option);
+
+  });
+  selectedFieldOptions = document.querySelectorAll('.selected-field-option');
+
+  selectedFieldOptions.forEach(option => {
+    option.addEventListener('click', () => {
+      selectedFieldValue = option.getAttribute("selectedstr");
+      if (selectedFieldValue == "other") {
+        showInput(careerPathwayOtherField);
+
+      } else if (careerPathwayOtherField?.style.display == "block") {
+        hideInput(careerPathwayOtherField);
+      }
+      hideBorder(selectedField);
+    });
+
   });
 
 }
